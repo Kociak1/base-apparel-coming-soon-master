@@ -139,7 +139,7 @@ main form.error p {
 
 @media (min-width: 1440px) {
   body {
-    background-image: url("/images/bg-pattern-desktop.svg");
+    background-image: url("../images/bg-pattern-desktop.svg");
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 5fr 4fr;
@@ -159,7 +159,7 @@ main form.error p {
     grid-area: dhero;
     width: 100%;
     background: red;
-    background-image: url("/images/hero-desktop.jpg");
+    background-image: url("../images/hero-desktop.jpg");
     background-position: center;
     background-size: cover;
   }
