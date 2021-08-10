@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+$Desaturated-Red: hsl(0, 36%, 70%);
+$Soft-Red: hsl(0, 93%, 68%);
+
+$Dark-Grayish-Red: hsl(0, 6%, 24%);
+.dhero {
+  display: none;
+}
+body {
+  font-size: 16px;
+  font-family: "Josefin Sans", sans-serif;
+  height: 100vh;
+  background: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+}
+.mhero {
+  width: 100%;
+}
+header {
+  padding: 2rem;
+}
+main {
+  text-align: center;
+  padding: 4rem 1.5rem;
+  h3 {
+    font-size: 3.1rem;
+    text-transform: uppercase;
+    color: $Dark-Grayish-Red;
+    letter-spacing: 0.7rem;
+    span {
+      font-weight: 300;
+      color: $Desaturated-Red;
+    }
+  }
+  p {
+    padding: 3rem 0;
+
+    color: $Desaturated-Red;
+    line-height: 1.5rem;
+  }
+  form {
+    width: 100%;
+    div {
+      width: 100%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      justify-content: flex-end;
+      input {
+        padding: 1.2rem 1rem;
+        border-radius: 2rem;
+        border: none;
+        outline: none;
+      }
+      input[type="email"] {
+        width: 100%;
+        border: 1px solid $Desaturated-Red;
+        color: $Dark-Grayish-Red;
+        padding-right: 7rem;
+      }
+      input[type="submit"] {
+        padding: 0 2rem;
+        height: 100%;
+        position: absolute;
+        // right: 0;
+        background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+        box-shadow: 0 12px 10px 5px hsla(0, 74%, 74%, 0.212);
+        font-size: 2rem;
+        color: white;
+      }
+      input[type="submit"]:hover {
+        cursor: pointer;
+        background: linear-gradient(135deg, hsl(0, 80%, 96%), hsl(0, 74%, 84%));
+      }
+      ::placeholder {
+        color: $Desaturated-Red;
+      }
+      img {
+        position: absolute;
+        right: 5.4rem;
+        display: none;
+      }
+    }
+    p {
+      display: none;
+    }
+  }
+
+  form.error {
+    img {
+      display: block;
+    }
+    p {
+      display: block;
+      margin-top: 0;
+      color: $Soft-Red;
+      padding: 0;
+      text-align: left;
+      padding-top: 0.3rem;
+      padding-left: 1rem;
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  body {
+    background-image: url("/images/bg-pattern-desktop.svg");
+    display: grid;
+    grid-template-columns: 5fr 4fr;
+    grid-template-areas:
+      "header dhero"
+      "main dhero";
+    grid-template-rows: auto 1fr;
+  }
+  .mhero {
+    display: none;
+  }
+  .dhero {
+    display: block;
+    grid-area: dhero;
+    width: 100%;
+    background: red;
+    background-image: url("/images/hero-desktop.jpg");
+    background-position: center;
+    background-size: cover;
+    img {
+      display: none;
+    }
+  }
+  main {
+    grid-area: main;
+    text-align: left;
+    margin: auto 8rem;
+    padding-left: 0;
+    p {
+      max-width: 40ch;
+    }
+    h3 {
+      font-size: 5rem;
+    }
+    form {
+      width: 30rem;
+    }
+  }
+  header {
+    grid-area: header;
+    padding-left: 0;
+    margin-left: 8rem;
+    padding-top: 4rem;
+  }
+}
